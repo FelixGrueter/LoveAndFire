@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="en">
 
 <head>
@@ -7,15 +6,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Love &amp; Fire | Spiritual Intensive</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -88,19 +80,15 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-
         .glass-nav {
             background: linear-gradient(to bottom, #070f16 0%, rgba(7, 15, 22, 0) 100%);
         }
-
         .fire-gradient {
             background: linear-gradient(135deg, #ffaa00 0%, #e60000 100%);
         }
-
         .text-glow {
             text-shadow: 0 0 20px rgba(255, 144, 109, 0.3);
         }
-
         .pulse-label {
             display: inline-flex;
             align-items: center;
@@ -112,7 +100,6 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-
         .pulse-dot {
             width: 8px;
             height: 8px;
@@ -120,26 +107,24 @@
             border-radius: 50%;
             animation: pulse-dot-anim 2s infinite ease-in-out;
         }
-
         @keyframes pulse-dot-anim {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-                box-shadow: 0 0 0 0 rgba(255, 215, 9, 0.7);
-            }
-
-            50% {
-                transform: scale(1.5);
-                opacity: 0.5;
-                box-shadow: 0 0 0 10px rgba(255, 215, 9, 0);
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 1;
-                box-shadow: 0 0 0 0 rgba(255, 215, 9, 0);
-            }
+            0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(255, 215, 9, 0.7); }
+            50% { transform: scale(1.5); opacity: 0.5; box-shadow: 0 0 0 10px rgba(255, 215, 9, 0); }
+            100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(255, 215, 9, 0); }
         }
+        
+        /* ========== LANGUAGE SWITCHER ========== */
+        .lang-switcher { display: flex; align-items: center; gap: 2px; margin-left: 1rem; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(240, 237, 232, 0.1); border-radius: 3px; padding: 3px; }
+        .lang-btn { display: flex; align-items: center; gap: 5px; padding: 0.35em 0.65em; border-radius: 2px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; color: #a4acb5; background: transparent; border: none; cursor: pointer; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+        .lang-btn:hover { color: #eaf1fc; background: rgba(240, 237, 232, 0.08); }
+        .lang-btn.active { color: #fff; background: #e60000; font-weight: 700; }
+        .lang-flag { font-size: 1rem; line-height: 1; }
+        .lang-code { font-size: 0.7rem; letter-spacing: 0.06em; }
+        .lang-switcher--mobile { margin: 1rem 0 0; background: rgba(255, 255, 255, 0.05); border-color: rgba(240, 237, 232, 0.15); padding: 4px; border-radius: 4px; gap: 4px; display: inline-flex; justify-content: center; }
+        .lang-switcher--mobile .lang-btn { padding: 0.55em 1em; font-size: 0.8rem; gap: 6px; }
+        .lang-switcher--mobile .lang-flag { font-size: 1.2rem; }
+        .lang-switcher--mobile .lang-code { font-size: 0.78rem; }
+        @media (max-width: 900px) { .nav-desktop-switcher { display: none; } }
     </style>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -150,170 +135,152 @@
         <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
             <img src="assets/images/loveandfire-logo.png" alt="Love & Fire Logo" class="h-[120px] w-auto">
             <div class="hidden md:flex items-center gap-8">
-                <a class="text-slate-300 hover:text-orange-400 transition-colors font-manrope font-semibold"
-                    href="#schedule">Schedule</a>
-                <a class="text-slate-300 hover:text-orange-400 transition-colors font-manrope font-semibold"
-                    href="#about">About</a>
-                <button onclick="document.getElementById('intensives').scrollIntoView({behavior: 'smooth'})"
-                    class="fire-gradient text-on-primary-fixed px-6 py-2 rounded-full font-bold transition-transform scale-95 active:scale-90">Register
-                    Now</button>
+                <a class="text-slate-300 hover:text-orange-400 transition-colors font-manrope font-semibold" href="#schedule" data-i18n="nav_schedule">Schedule</a>
+                <a class="text-slate-300 hover:text-orange-400 transition-colors font-manrope font-semibold" href="#about" data-i18n="nav_about">About</a>
+                <button onclick="document.getElementById('intensives').scrollIntoView({behavior: 'smooth'})" class="fire-gradient text-on-primary-fixed px-6 py-2 rounded-full font-bold transition-transform scale-95 active:scale-90" data-i18n="nav_register">Register Now</button>
+                <div class="lang-switcher nav-desktop-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('de')" data-lang="de"><span class="lang-flag">🇩🇪</span><span class="lang-code">DE</span></button>
+                    <button class="lang-btn" onclick="setLanguage('en')" data-lang="en"><span class="lang-flag">🇬🇧</span><span class="lang-code">EN</span></button>
+                    <button class="lang-btn" onclick="setLanguage('it')" data-lang="it"><span class="lang-flag">🇮🇹</span><span class="lang-code">IT</span></button>
+                </div>
             </div>
-            <button class="md:hidden text-on-surface">
+            
+            <button class="md:hidden text-on-surface" id="openMobileMenuBtn">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </nav>
+    
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-gradient-to-b from-surface/20 via-surface/60 to-surface z-10"></div>
-            <video autoplay loop muted playsinline
-                class="w-full h-full object-cover saturate-50 md:object-[center_80%]">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover saturate-50 md:object-[center_80%]">
                 <source src="assets/videos/lion-worship.mp4" type="video/mp4">
             </video>
         </div>
         <div class="relative z-20 max-w-5xl px-6 text-center" data-aos="zoom-in" data-aos-duration="1200">
             <span class="pulse-label mb-6">
-                <span class="pulse-dot"></span> Experience the Power of the Gospel
+                <span class="pulse-dot"></span> <span data-i18n="hero_pulse">Experience the Power of the Gospel</span>
             </span>
             <h1 class="text-5xl md:text-8xl font-headline font-extrabold tracking-tight mb-8 text-glow">
-                From <span class="text-on-surface/40">Doing Church</span> to <br />
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Living with
-                    God</span>
+                <span data-i18n="hero_title_1">From </span>
+                <span class="text-on-surface/40" data-i18n="hero_title_2">Doing Church</span>
+                <span data-i18n="hero_title_3"> to <br /></span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary" data-i18n="hero_title_4">Living with God</span>
             </h1>
-            <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed">
-                Step into a three-day catalytic encounter designed to awaken your spiritual identity and normalize the
-                supernatural in your everyday life.
+            <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="hero_subtitle">
+                Step into a three-day catalytic encounter designed to awaken your spiritual identity and normalize the supernatural in your everyday life.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button onclick="document.getElementById('intensives').scrollIntoView({behavior: 'smooth'})"
-                    class="fire-gradient text-on-primary-fixed w-full sm:w-64 h-[68px] rounded-full text-lg font-bold shadow-2xl shadow-primary/20 transition-all hover:scale-105 active:scale-95 flex items-center justify-center">
+                <button onclick="document.getElementById('intensives').scrollIntoView({behavior: 'smooth'})" class="fire-gradient text-on-primary-fixed w-full sm:w-64 h-[68px] rounded-full text-lg font-bold shadow-2xl shadow-primary/20 transition-all hover:scale-105 active:scale-95 flex items-center justify-center" data-i18n="hero_btn_register">
                     Register Now
                 </button>
-                <button
-                    class="bg-surface-bright/40 backdrop-blur-md border border-outline-variant/30 text-on-surface w-full sm:w-64 h-[68px] rounded-full text-lg font-bold transition-all hover:bg-surface-bright/60 relative flex items-center justify-center">
-                    <span>Watch Trailer</span>
-                    <span class="absolute bottom-1 text-[11px] text-slate-500 font-normal tracking-wider">coming soon</span>
+                <button class="bg-surface-bright/40 backdrop-blur-md border border-outline-variant/30 text-on-surface w-full sm:w-64 h-[68px] rounded-full text-lg font-bold transition-all hover:bg-surface-bright/60 relative flex items-center justify-center">
+                    <span data-i18n="hero_btn_trailer">Watch Trailer</span>
+                    <span class="absolute bottom-1 text-[11px] text-slate-500 font-normal tracking-wider" data-i18n="hero_coming_soon">coming soon</span>
                 </button>
             </div>
         </div>
     </section>
+
     <!-- The Experience (Bento Grid) -->
     <section class="py-24 px-6 bg-surface" id="about">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16">
-                <h2 class="text-3xl md:text-5xl font-headline font-bold mb-4">The School of the Heart</h2>
+                <h2 class="text-3xl md:text-5xl font-headline font-bold mb-4" data-i18n="about_title">The School of the Heart</h2>
                 <div class="h-1 w-24 bg-primary rounded-full"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
                 <!-- Large Feature -->
-                <div data-aos="fade-up"
-                    class="md:col-span-8 bg-surface-container-high rounded-xl p-8 md:p-12 relative overflow-hidden group">
+                <div data-aos="fade-up" class="md:col-span-8 bg-surface-container-high rounded-xl p-8 md:p-12 relative overflow-hidden group">
                     <div class="relative z-10 max-w-md">
                         <span class="material-symbols-outlined text-secondary text-4xl mb-6">identity_platform</span>
-                        <h3 class="text-3xl font-headline font-bold mb-4">Coming Home</h3>
-                        <p class="text-on-surface-variant leading-relaxed">Stop performing and start belonging. Discover
-                            the profound reality of your position as a son or daughter of the King, operating from
-                            victory rather than for it.</p>
+                        <h3 class="text-3xl font-headline font-bold mb-4" data-i18n="about_card1_title">Coming Home</h3>
+                        <p class="text-on-surface-variant leading-relaxed" data-i18n="about_card1_desc">Stop performing and start belonging. Discover the profound reality of your position as a son or daughter of the King, operating from victory rather than for it.</p>
                     </div>
-                    <div
-                        class="absolute right-[-10%] bottom-[-10%] w-64 h-64 bg-primary/10 blur-[80px] rounded-full group-hover:bg-primary/20 transition-colors">
-                    </div>
+                    <div class="absolute right-[-10%] bottom-[-10%] w-64 h-64 bg-primary/10 blur-[80px] rounded-full group-hover:bg-primary/20 transition-colors"></div>
                 </div>
                 <!-- Small Feature -->
-                <div data-aos="fade-up" data-aos-delay="100"
-                    class="md:col-span-4 bg-surface-container-highest rounded-xl p-8 flex flex-col justify-between">
+                <div data-aos="fade-up" data-aos-delay="100" class="md:col-span-4 bg-surface-container-highest rounded-xl p-8 flex flex-col justify-between">
                     <span class="material-symbols-outlined text-primary text-4xl">hearing</span>
                     <div>
-                        <h3 class="text-xl font-headline font-bold mb-2">Hearing His Voice</h3>
-                        <p class="text-on-surface-variant text-sm">Practical, grounded training in recognizing the
-                            whisper of God in your daily rhythms.</p>
+                        <h3 class="text-xl font-headline font-bold mb-2" data-i18n="about_card2_title">Hearing His Voice</h3>
+                        <p class="text-on-surface-variant text-sm" data-i18n="about_card2_desc">Practical, grounded training in recognizing the whisper of God in your daily rhythms.</p>
                     </div>
                 </div>
                 <!-- Mid Feature -->
-                <div data-aos="fade-up" data-aos-delay="200"
-                    class="md:col-span-5 bg-surface-container-highest rounded-xl p-8 flex flex-col justify-between">
+                <div data-aos="fade-up" data-aos-delay="200" class="md:col-span-5 bg-surface-container-highest rounded-xl p-8 flex flex-col justify-between">
                     <span class="material-symbols-outlined text-tertiary text-4xl">auto_awesome</span>
                     <div>
-                        <h3 class="text-xl font-headline font-bold mb-2">Normalizing the Supernatural</h3>
-                        <p class="text-on-surface-variant text-sm">Demystifying spiritual gifts to bring healing and
-                            breakthrough wherever you go.</p>
+                        <h3 class="text-xl font-headline font-bold mb-2" data-i18n="about_card3_title">Normalizing the Supernatural</h3>
+                        <p class="text-on-surface-variant text-sm" data-i18n="about_card3_desc">Demystifying spiritual gifts to bring healing and breakthrough wherever you go.</p>
                     </div>
                 </div>
                 <!-- Mid Feature -->
-                <div data-aos="fade-up" data-aos-delay="300"
-                    class="md:col-span-7 bg-surface-container-high rounded-xl p-8 md:p-12 flex flex-col justify-center">
+                <div data-aos="fade-up" data-aos-delay="300" class="md:col-span-7 bg-surface-container-high rounded-xl p-8 md:p-12 flex flex-col justify-center">
                     <span class="material-symbols-outlined text-primary text-4xl mb-6">anchor</span>
                     <div class="w-full">
-                        <h3 class="text-2xl font-headline font-bold mb-4">Dwell. Go. Dwell.</h3>
-                        <p class="text-on-surface-variant leading-relaxed">Experience a paradigm shift where rest
-                            and prayer become your most productive tools for world change.</p>
+                        <h3 class="text-2xl font-headline font-bold mb-4" data-i18n="about_card4_title">Dwell. Go. Dwell.</h3>
+                        <p class="text-on-surface-variant leading-relaxed" data-i18n="about_card4_desc">Experience a paradigm shift where rest and prayer become your most productive tools for world change.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Schedule Section -->
     <section class="py-24 bg-surface-container-low" id="schedule">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-headline font-bold mb-4">The Intensive Journey</h2>
-                <p class="text-on-surface-variant">Two days of immersive transformation</p>
+                <h2 class="text-4xl font-headline font-bold mb-4" data-i18n="schedule_title">The Intensive Journey</h2>
+                <p class="text-on-surface-variant" data-i18n="schedule_subtitle">Two days of immersive transformation</p>
             </div>
             <div class="space-y-4">
                 <!-- Day 1 -->
-                <div data-aos="fade-right"
-                    class="bg-surface-container rounded-xl p-6 border-l-4 border-primary hover:bg-surface-container-high transition-colors">
+                <div data-aos="fade-right" class="bg-surface-container rounded-xl p-6 border-l-4 border-primary hover:bg-surface-container-high transition-colors">
                     <div class="flex flex-col md:flex-row gap-6">
                         <div class="min-w-[140px]">
-                            <span class="text-primary font-bold text-sm uppercase tracking-widest">Day 01</span>
-                            <div class="text-2xl font-headline font-extrabold mb-2">Identity</div>
-                            <div class="text-on-surface-variant font-mono text-xs">08:00 — Late</div>
+                            <span class="text-primary font-bold text-sm uppercase tracking-widest" data-i18n="sch_day1_num">Day 01</span>
+                            <div class="text-2xl font-headline font-extrabold mb-2" data-i18n="sch_day1_title">Identity</div>
+                            <div class="text-on-surface-variant font-mono text-xs" data-i18n="sch_day1_time">08:00 — Late</div>
                         </div>
                         <div class="flex-grow space-y-4">
                             <div>
-                                <h4 class="font-bold text-lg mb-1">Morning: Worship &amp; Activation</h4>
-                                <p class="text-on-surface-variant text-sm">08:00 Doors Open. Session 1 &amp; 2: Deep
-                                    worship and foundational teaching on who you are in Christ, followed by practical
-                                    activation.</p>
+                                <h4 class="font-bold text-lg mb-1" data-i18n="sch_day1_s1_title">Morning: Worship &amp; Activation</h4>
+                                <p class="text-on-surface-variant text-sm" data-i18n="sch_day1_s1_desc">08:00 Doors Open. Session 1 &amp; 2: Deep worship and foundational teaching on who you are in Christ, followed by practical activation.</p>
                             </div>
                             <div class="pt-4 border-t border-outline-variant/10">
-                                <h4 class="font-bold text-lg mb-1">Afternoon: Love in Action Outreach</h4>
-                                <p class="text-on-surface-variant text-sm">Taking it to the streets: Healing the sick,
-                                    sharing the Gospel, and praying for people in the city.</p>
+                                <h4 class="font-bold text-lg mb-1" data-i18n="sch_day1_s2_title">Afternoon: Love in Action Outreach</h4>
+                                <p class="text-on-surface-variant text-sm" data-i18n="sch_day1_s2_desc">Taking it to the streets: Healing the sick, sharing the Gospel, and praying for people in the city.</p>
                             </div>
                             <div class="pt-4 border-t border-outline-variant/10">
-                                <h4 class="font-bold text-lg mb-1">Evening Session</h4>
-                                <p class="text-on-surface-variant text-sm">Outreach testimonies, intense worship times,
-                                    and powerful ministry.</p>
+                                <h4 class="font-bold text-lg mb-1" data-i18n="sch_day1_s3_title">Evening Session</h4>
+                                <p class="text-on-surface-variant text-sm" data-i18n="sch_day1_s3_desc">Outreach testimonies, intense worship times, and powerful ministry.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Day 2 -->
-                <div data-aos="fade-right" data-aos-delay="150"
-                    class="bg-surface-container rounded-xl p-6 border-l-4 border-secondary hover:bg-surface-container-high transition-colors">
+                <div data-aos="fade-right" data-aos-delay="150" class="bg-surface-container rounded-xl p-6 border-l-4 border-secondary hover:bg-surface-container-high transition-colors">
                     <div class="flex flex-col md:flex-row gap-6">
                         <div class="min-w-[140px]">
-                            <span class="text-secondary font-bold text-sm uppercase tracking-widest">Day 02</span>
-                            <div class="text-2xl font-headline font-extrabold mb-2">Lifestyle</div>
-                            <div class="text-on-surface-variant font-mono text-xs">08:00 — Late</div>
+                            <span class="text-secondary font-bold text-sm uppercase tracking-widest" data-i18n="sch_day2_num">Day 02</span>
+                            <div class="text-2xl font-headline font-extrabold mb-2" data-i18n="sch_day2_title">Lifestyle</div>
+                            <div class="text-on-surface-variant font-mono text-xs" data-i18n="sch_day2_time">08:00 — Late</div>
                         </div>
                         <div class="flex-grow space-y-4">
                             <div>
-                                <h4 class="font-bold text-lg mb-1">Morning: Vision Breakfast</h4>
-                                <p class="text-on-surface-variant text-sm">08:00 Vision Breakfast. An exclusive
-                                    gathering to connect, followed directly by Session 4 and 5.</p>
+                                <h4 class="font-bold text-lg mb-1" data-i18n="sch_day2_s1_title">Morning: Vision Breakfast</h4>
+                                <p class="text-on-surface-variant text-sm" data-i18n="sch_day2_s1_desc">08:00 Vision Breakfast. An exclusive gathering to connect, followed directly by Session 4 and 5.</p>
                             </div>
                             <div class="pt-4 border-t border-outline-variant/10">
-                                <h4 class="font-bold text-lg mb-1">Afternoon: Love in Action Outreach</h4>
-                                <p class="text-on-surface-variant text-sm">Another powerful opportunity to step out in
-                                    faith and bring the love of Jesus to the lost.</p>
+                                <h4 class="font-bold text-lg mb-1" data-i18n="sch_day2_s2_title">Afternoon: Love in Action Outreach</h4>
+                                <p class="text-on-surface-variant text-sm" data-i18n="sch_day2_s2_desc">Another powerful opportunity to step out in faith and bring the love of Jesus to the lost.</p>
                             </div>
                             <div class="pt-4 border-t border-outline-variant/10">
-                                <h4 class="font-bold text-lg mb-1">Closing Event</h4>
-                                <p class="text-on-surface-variant text-sm">Final impartation and commissioning—sending
-                                    you out to live an everyday lifestyle of power and love.</p>
+                                <h4 class="font-bold text-lg mb-1" data-i18n="sch_day2_s3_title">Closing Event</h4>
+                                <p class="text-on-surface-variant text-sm" data-i18n="sch_day2_s3_desc">Final impartation and commissioning—sending you out to live an everyday lifestyle of power and love.</p>
                             </div>
                         </div>
                     </div>
@@ -321,25 +288,24 @@
             </div>
         </div>
     </section>
+
     <!-- Upcoming Events -->
     <section class="py-24 px-6" id="intensives">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                 <div>
-                    <h2 class="text-3xl md:text-5xl font-headline font-bold mb-4">Find Your Intensive</h2>
-                    <p class="text-on-surface-variant max-w-xl">We're taking the fire across the globe. Join us at a
-                        location near you for a life-altering weekend.</p>
+                    <h2 class="text-3xl md:text-5xl font-headline font-bold mb-4" data-i18n="int_title">Find Your Intensive</h2>
+                    <p class="text-on-surface-variant max-w-xl" data-i18n="int_subtitle">We're taking the fire across the globe. Join us at a location near you for a life-altering weekend.</p>
                 </div>
-                <button
-                    class="text-primary font-bold flex items-center gap-2 group hover:translate-x-1 transition-transform">
-                    View all dates <span class="material-symbols-outlined">arrow_forward</span>
+                <button class="text-primary font-bold flex items-center gap-2 group hover:translate-x-1 transition-transform">
+                    <span data-i18n="int_view_all">View all dates</span> <span class="material-symbols-outlined">arrow_forward</span>
                 </button>
             </div>
             <div class="relative overflow-hidden p-2 md:p-8 -m-2 md:-m-8">
                 <!-- Diagonal Banner -->
                 <div class="absolute top-1/2 left-1/2 w-[200%] md:w-[150%] lg:w-[120%] -translate-x-1/2 -translate-y-1/2 rotate-[15deg] z-50 pointer-events-none">
                     <div data-aos="fade-right" data-aos-duration="1200" class="w-full bg-white/5 backdrop-blur-[6px] border-y border-white/10 py-4 lg:py-6 flex items-center justify-center shadow-[0_8px_32px_0_rgba(255,255,255,0.02)] overflow-hidden">
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary text-5xl md:text-7xl font-headline font-black uppercase tracking-[0.3em] drop-shadow-sm">COMING SOON</span>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary text-5xl md:text-7xl font-headline font-black uppercase tracking-[0.3em] drop-shadow-sm" data-i18n="int_coming_soon">COMING SOON</span>
                     </div>
                 </div>
                 <!-- Card Container -->
@@ -350,19 +316,15 @@
                         <img alt="Basel" class="w-full h-full object-cover" src="assets/images/basel.png" />
                         <div class="absolute inset-0 bg-gradient-to-t from-surface-container-high to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
-                            <span class="bg-primary text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold">MAY
-                                04-05</span>
+                            <span class="bg-primary text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold">MAY 04-05</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h4 class="text-xl font-headline font-bold mb-2">Basel, Switzerland</h4>
+                        <h4 class="text-xl font-headline font-bold mb-2" data-i18n="int_country1">Basel, Switzerland</h4>
                         <p class="text-on-surface-variant text-sm mb-6 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-sm">location_on</span> City Center Venue
+                            <span class="material-symbols-outlined text-sm">location_on</span> <span data-i18n="int_venue1">City Center Venue</span>
                         </p>
-                        <button
-                            class="w-full py-3 rounded-lg bg-surface-bright text-on-surface font-bold border border-outline-variant/30 pointer-events-none opacity-80">
-                            Sign Up
-                        </button>
+                        <button class="w-full py-3 rounded-lg bg-surface-bright text-on-surface font-bold border border-outline-variant/30 pointer-events-none opacity-80" data-i18n="int_signup">Sign Up</button>
                     </div>
                 </div>
                 <!-- Event 2: Waldshut -->
@@ -371,41 +333,32 @@
                         <img alt="Waldshut" class="w-full h-full object-cover" src="assets/images/waldshut.png" />
                         <div class="absolute inset-0 bg-gradient-to-t from-surface-container-high to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
-                            <span class="bg-primary text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold">JUL
-                                20-21</span>
+                            <span class="bg-primary text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold">JUL 20-21</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h4 class="text-xl font-headline font-bold mb-2">Waldshut, Germany</h4>
+                        <h4 class="text-xl font-headline font-bold mb-2" data-i18n="int_country2">Waldshut, Germany</h4>
                         <p class="text-on-surface-variant text-sm mb-6 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-sm">location_on</span> Kaiserstraße Hall
+                            <span class="material-symbols-outlined text-sm">location_on</span> <span data-i18n="int_venue2">Kaiserstraße Hall</span>
                         </p>
-                        <button
-                            class="w-full py-3 rounded-lg bg-surface-bright text-on-surface font-bold border border-outline-variant/30 pointer-events-none opacity-80">
-                            Sign Up
-                        </button>
+                        <button class="w-full py-3 rounded-lg bg-surface-bright text-on-surface font-bold border border-outline-variant/30 pointer-events-none opacity-80" data-i18n="int_signup">Sign Up</button>
                     </div>
                 </div>
                 <!-- Event 3: Villingen -->
                 <div class="bg-surface-container-high rounded-xl overflow-hidden pointer-events-none">
                     <div class="h-48 relative">
-                        <img alt="Villingen" class="w-full h-full object-cover"
-                            src="assets/images/villingen.png" />
+                        <img alt="Villingen" class="w-full h-full object-cover" src="assets/images/villingen.png" />
                         <div class="absolute inset-0 bg-gradient-to-t from-surface-container-high to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
-                            <span class="bg-primary text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold">SEP
-                                14-15</span>
+                            <span class="bg-primary text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold">SEP 14-15</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h4 class="text-xl font-headline font-bold mb-2">Villingen, Germany</h4>
+                        <h4 class="text-xl font-headline font-bold mb-2" data-i18n="int_country3">Villingen, Germany</h4>
                         <p class="text-on-surface-variant text-sm mb-6 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-sm">location_on</span> Münster Square
+                            <span class="material-symbols-outlined text-sm">location_on</span> <span data-i18n="int_venue3">Münster Square</span>
                         </p>
-                        <button
-                            class="w-full py-3 rounded-lg bg-surface-bright text-on-surface font-bold border border-outline-variant/30 pointer-events-none opacity-80">
-                            Sign Up
-                        </button>
+                        <button class="w-full py-3 rounded-lg bg-surface-bright text-on-surface font-bold border border-outline-variant/30 pointer-events-none opacity-80" data-i18n="int_signup">Sign Up</button>
                     </div>
                 </div>
                 </div>
@@ -417,168 +370,138 @@
     <section class="py-32 px-6 relative overflow-hidden flex justify-center text-center">
         <!-- Background Elements -->
         <div class="absolute inset-0 z-0">
-            <!-- Subtle City Skyline Night Image -->
             <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-luminosity"></div>
-            <!-- Dark Overlay to make it very subtle -->
             <div class="absolute inset-0 bg-surface/90"></div>
-            <!-- Color Accents -->
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
         </div>
 
         <div class="max-w-3xl mx-auto relative z-10" data-aos="zoom-in" data-aos-duration="1000">
             <span class="pulse-label mb-6 mx-auto justify-center">
-                <span class="pulse-dot"></span> Bring the Fire
+                <span class="pulse-dot"></span> <span data-i18n="host_pulse">Bring the Fire</span>
             </span>
             
-            <h2 class="text-4xl md:text-5xl font-headline font-bold mb-8 tracking-tight text-glow leading-[1.3]">Missing your city? <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary inline-block mt-2">Host your own!</span></h2>
+            <h2 class="text-4xl md:text-5xl font-headline font-bold mb-8 tracking-tight text-glow leading-[1.3]"><span data-i18n="host_title1">Missing your city? <br/></span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary inline-block mt-2" data-i18n="host_title2">Host your own!</span></h2>
             
-            <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed mb-10 max-w-2xl mx-auto">
+            <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed mb-10 max-w-2xl mx-auto" data-i18n="host_desc">
                 Our heart is to spread the fire! Wherever people are hungry, we'd love to come. Invite us to host a <strong class="text-on-surface">Love & Fire Intensive</strong> directly in your city, your home church, or your network.
             </p>
             
             <button id="openContactBtn2" class="group fire-gradient text-on-primary-fixed px-12 py-5 rounded-full text-lg font-bold shadow-2xl shadow-primary/20 transition-all hover:scale-105 hover:shadow-primary/40 active:scale-95 flex items-center justify-center gap-3 mx-auto">
-                Invite us
+                <span data-i18n="host_btn">Invite us</span>
                 <span class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">forward_to_inbox</span>
             </button>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section
-        class="py-24 bg-gradient-to-br from-surface-container-lowest to-surface-container/20 overflow-hidden relative">
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent">
-        </div>
+    <section class="py-24 bg-gradient-to-br from-surface-container-lowest to-surface-container/20 overflow-hidden relative">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div
-                class="absolute -left-[10%] top-[20%] w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none">
-            </div>
+            <div class="absolute -left-[10%] top-[20%] w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative">
                 <div class="space-y-8" data-aos="fade-right">
-                    <div
-                        class="bg-surface p-8 md:p-10 rounded-2xl relative h-full flex flex-col justify-center border border-primary/10 shadow-2xl shadow-primary/5">
-                        <div
-                            class="absolute -top-5 -left-5 w-14 h-14 bg-gradient-to-br from-tertiary to-secondary rounded-full flex items-center justify-center shadow-lg shadow-tertiary/20">
+                    <div class="bg-surface p-8 md:p-10 rounded-2xl relative h-full flex flex-col justify-center border border-primary/10 shadow-2xl shadow-primary/5">
+                        <div class="absolute -top-5 -left-5 w-14 h-14 bg-gradient-to-br from-tertiary to-secondary rounded-full flex items-center justify-center shadow-lg shadow-tertiary/20">
                             <span class="material-symbols-outlined text-on-tertiary text-2xl">format_quote</span>
                         </div>
-                        <p
-                            class="text-lg md:text-xl italic mb-6 leading-loose tracking-wide text-on-surface-variant font-light">
-                            "After making a profound decision for Jesus, truly leaving my old life behind and repenting,
-                            people at a Fire Conference laid their hands on me. I received the Holy Spirit and began to
-                            pray in tongues—an encounter that changed my life forever. My deepest desire is that others
-                            can experience this exact same transformation."</p>
+                        <p class="text-lg md:text-xl italic mb-6 leading-loose tracking-wide text-on-surface-variant font-light" data-i18n="test_quote">
+                            "After making a profound decision for Jesus, truly leaving my old life behind and repenting, people at a Fire Conference laid their hands on me. I received the Holy Spirit and began to pray in tongues—an encounter that changed my life forever. My deepest desire is that others can experience this exact same transformation."</p>
                         <div class="flex items-center gap-4 mt-auto">
                             <div>
                                 <p class="font-bold text-lg">Daniele Vitale</p>
-                                <p class="text-xs text-primary uppercase font-bold tracking-widest mt-1">A Life
-                                    Transformed</p>
+                                <p class="text-xs text-primary uppercase font-bold tracking-widest mt-1" data-i18n="test_subtitle">A Life Transformed</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div data-aos="fade-left"
-                    class="relative aspect-square md:aspect-auto md:h-[500px] rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-outline-variant/20 group">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/5 mix-blend-overlay z-10 group-hover:opacity-50 transition-opacity duration-500">
-                    </div>
-                    <img alt="Daniele Vitale"
-                        class="w-full h-full object-cover relative z-0 transition-transform duration-700 group-hover:scale-105"
-                        src="assets/images/event-photo.jpg" />
+                <div data-aos="fade-left" class="relative aspect-square md:aspect-auto md:h-[500px] rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-outline-variant/20 group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/5 mix-blend-overlay z-10 group-hover:opacity-50 transition-opacity duration-500"></div>
+                    <img alt="Daniele Vitale" class="w-full h-full object-cover relative z-0 transition-transform duration-700 group-hover:scale-105" src="assets/images/event-photo.jpg" />
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Final CTA -->
     <section class="py-24 px-6 text-center bg-gradient-to-b from-surface to-surface-container-low">
         <div class="max-w-3xl mx-auto" data-aos="zoom-in" data-aos-duration="1000">
-            <h2 class="text-4xl md:text-6xl font-headline font-bold mb-8">Your encounter is waiting.</h2>
-            <p class="text-xl text-on-surface-variant mb-12">Step out of performance and into a powerful encounter.
-                Secure your place for a life-altering weekend of Love and Fire.</p>
-            <button onclick="document.getElementById('intensives').scrollIntoView({behavior: 'smooth'})"
-                class="fire-gradient text-on-primary-fixed px-12 py-5 rounded-full text-xl font-bold hover:shadow-2xl hover:shadow-primary/40 transition-all active:scale-95">
+            <h2 class="text-4xl md:text-6xl font-headline font-bold mb-8" data-i18n="cta_title">Your encounter is waiting.</h2>
+            <p class="text-xl text-on-surface-variant mb-12" data-i18n="cta_desc">Step out of performance and into a powerful encounter. Secure your place for a life-altering weekend of Love and Fire.</p>
+            <button onclick="document.getElementById('intensives').scrollIntoView({behavior: 'smooth'})" class="fire-gradient text-on-primary-fixed px-12 py-5 rounded-full text-xl font-bold hover:shadow-2xl hover:shadow-primary/40 transition-all active:scale-95" data-i18n="cta_btn">
                 Register Now
             </button>
         </div>
     </section>
+
     <!-- Footer -->
     <footer class="bg-slate-950 w-full py-12 px-6">
         <div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left max-w-lg">
-                <div class="w-24 h-24 shrink-0 bg-no-repeat bg-top"
-                    style="background-image: url('assets/images/loveandfire-logo.png'); background-size: 100% auto;"
-                    title="Love & Fire Flame"></div>
-                <p class="text-slate-500 text-sm font-manrope leading-relaxed">Equipping the body of Christ to normalize
-                    the lifestyle of the supernatural and intimacy.</p>
+                <div class="w-24 h-24 shrink-0 bg-no-repeat bg-top" style="background-image: url('assets/images/loveandfire-logo.png'); background-size: 100% auto;" title="Love & Fire Flame"></div>
+                <p class="text-slate-500 text-sm font-manrope leading-relaxed" data-i18n="foot_desc">Equipping the body of Christ to normalize the lifestyle of the supernatural and intimacy.</p>
             </div>
             <div class="flex flex-wrap justify-center gap-6">
-                <a class="font-manrope text-sm uppercase tracking-widest text-slate-500 hover:text-orange-300 transition-colors"
-                    href="#">Privacy Policy</a>
-                <a class="font-manrope text-sm uppercase tracking-widest text-slate-500 hover:text-orange-300 transition-colors"
-                    href="#">Terms of Service</a>
-                <a class="font-manrope text-sm uppercase tracking-widest text-slate-500 hover:text-orange-300 transition-colors"
-                    href="#" id="openContactBtn">Contact Us</a>
+                <a class="font-manrope text-sm uppercase tracking-widest text-slate-500 hover:text-orange-300 transition-colors" href="#" data-i18n="foot_privacy">Privacy Policy</a>
+                <a class="font-manrope text-sm uppercase tracking-widest text-slate-500 hover:text-orange-300 transition-colors" href="#" data-i18n="foot_terms">Terms of Service</a>
+                <a class="font-manrope text-sm uppercase tracking-widest text-slate-500 hover:text-orange-300 transition-colors" href="#" id="openContactBtn" data-i18n="foot_contact">Contact Us</a>
             </div>
             <div class="flex gap-4">
-                <a class="text-slate-500 hover:text-orange-300 transition-colors" href="#">
-                    <span class="material-symbols-outlined">brand_awareness</span>
-                </a>
-                <a class="text-slate-500 hover:text-orange-300 transition-colors" href="#">
-                    <span class="material-symbols-outlined">video_library</span>
-                </a>
+                <a class="text-slate-500 hover:text-orange-300 transition-colors" href="#"><span class="material-symbols-outlined">brand_awareness</span></a>
+                <a class="text-slate-500 hover:text-orange-300 transition-colors" href="#"><span class="material-symbols-outlined">video_library</span></a>
             </div>
         </div>
-        <div class="mt-12 pt-8 border-t border-slate-900 text-center">
-            <p class="font-manrope text-[10px] uppercase tracking-[0.3em] text-slate-600">© 2026 Love &amp; Fire
-                by MANTD</p>
+        <div class="mt-12 pt-8 border-t border-slate-900 text-center flex flex-col items-center justify-center gap-4">
+            <div class="lang-switcher lang-switcher--mobile md:hidden">
+                <button class="lang-btn active" onclick="setLanguage('de')" data-lang="de"><span class="lang-flag">🇩🇪</span><span class="lang-code">DE</span></button>
+                <button class="lang-btn" onclick="setLanguage('en')" data-lang="en"><span class="lang-flag">🇬🇧</span><span class="lang-code">EN</span></button>
+                <button class="lang-btn" onclick="setLanguage('it')" data-lang="it"><span class="lang-flag">🇮🇹</span><span class="lang-code">IT</span></button>
+            </div>
+            <p class="font-manrope text-[10px] uppercase tracking-[0.3em] text-slate-600">© 2026 Love &amp; Fire by MANTD</p>
         </div>
     </footer>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 800, once: true, offset: 100 });
-    </script>
 
     <!-- Contact Form Modal -->
     <div id="contactModal" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
-        <!-- Backdrop -->
         <div id="contactBackdrop" class="absolute inset-0 bg-surface/80 backdrop-blur-md cursor-pointer"></div>
         
-        <!-- Modal Content -->
         <div class="relative w-full max-w-lg mx-4 bg-surface-container-high/90 backdrop-blur-xl border border-outline-variant/40 rounded-[2rem] shadow-2xl p-8 transform scale-95 transition-transform duration-300 overflow-hidden" id="contactModalContent">
-            <!-- Glow effect -->
             <div class="absolute -top-32 -right-32 w-64 h-64 bg-primary/20 blur-[80px] rounded-full pointer-events-none"></div>
-
             <button id="closeContactBtn" class="absolute top-6 right-6 text-on-surface-variant hover:text-primary transition-colors">
                 <span class="material-symbols-outlined">close</span>
             </button>
             
-            <h3 class="text-3xl font-headline font-bold mb-2">Contact Us</h3>
-            <p class="text-on-surface-variant text-sm mb-8">Wir freuen uns über eine Nachricht von dir. Fülle einfach das Formular aus und wir melden uns zeitnah.</p>
+            <h3 class="text-3xl font-headline font-bold mb-2" data-i18n="modal_title">Contact Us</h3>
+            <p class="text-on-surface-variant text-sm mb-8" data-i18n="modal_desc">Wir freuen uns über eine Nachricht von dir. Fülle einfach das Formular aus und wir melden uns zeitnah.</p>
             
             <form class="space-y-5 relative z-10">
                 <div>
-                    <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Name</label>
-                    <input type="text" class="w-full bg-surface-container-lowest/50 border border-outline-variant/30 rounded-xl px-5 py-4 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-inner" placeholder="Dein Name" required>
+                    <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2" data-i18n="modal_label_name">Name</label>
+                    <input type="text" data-i18n-placeholder="modal_placeholder_name" class="w-full bg-surface-container-lowest/50 border border-outline-variant/30 rounded-xl px-5 py-4 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-inner" placeholder="Dein Name" required>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">E-Mail</label>
-                    <input type="email" class="w-full bg-surface-container-lowest/50 border border-outline-variant/30 rounded-xl px-5 py-4 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-inner" placeholder="deine@email.com" required>
+                    <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2" data-i18n="modal_label_email">E-Mail</label>
+                    <input type="email" data-i18n-placeholder="modal_placeholder_email" class="w-full bg-surface-container-lowest/50 border border-outline-variant/30 rounded-xl px-5 py-4 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-inner" placeholder="deine@email.com" required>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Telefonnummer</label>
-                    <input type="tel" class="w-full bg-surface-container-lowest/50 border border-outline-variant/30 rounded-xl px-5 py-4 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-inner" placeholder="+49 123 456789" required>
+                    <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2" data-i18n="modal_label_phone">Telefonnummer</label>
+                    <input type="tel" data-i18n-placeholder="modal_placeholder_phone" class="w-full bg-surface-container-lowest/50 border border-outline-variant/30 rounded-xl px-5 py-4 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-inner" placeholder="+49 123 456789" required>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Nachricht</label>
-                    <textarea rows="4" class="w-full bg-surface-container-lowest/50 border border-outline-variant/30 rounded-xl px-5 py-4 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-inner resize-none" placeholder="Wie können wir dir helfen?" required></textarea>
+                    <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2" data-i18n="modal_label_msg">Nachricht</label>
+                    <textarea rows="4" data-i18n-placeholder="modal_placeholder_msg" class="w-full bg-surface-container-lowest/50 border border-outline-variant/30 rounded-xl px-5 py-4 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-inner resize-none" placeholder="Wie können wir dir helfen?" required></textarea>
                 </div>
                 <button type="submit" class="w-full fire-gradient text-on-primary-fixed py-5 rounded-xl font-bold text-lg hover:shadow-[0_0_20px_rgba(230,0,0,0.4)] transition-all hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2 mt-4">
-                    Nachricht senden
+                    <span data-i18n="modal_btn">Nachricht senden</span>
                     <span class="material-symbols-outlined text-sm">send</span>
                 </button>
             </form>
         </div>
     </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        
         document.addEventListener('DOMContentLoaded', () => {
             const contactModal = document.getElementById('contactModal');
             const contactModalContent = document.getElementById('contactModalContent');
@@ -610,6 +533,7 @@
             if(contactBackdrop) contactBackdrop.addEventListener('click', closeContactModal);
         });
     </script>
+    
+    <script src="translations.js"></script>
 </body>
-
 </html>
